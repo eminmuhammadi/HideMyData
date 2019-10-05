@@ -8,8 +8,8 @@
 require_once '../vendor/autoload.php';
 
 /**
-*   Error Reporting
-*/
+ *   Error Reporting
+ */
 error_reporting(0);
 ini_set('display_errors', 0);
 
