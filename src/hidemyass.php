@@ -5,7 +5,7 @@
  *  @license  MIT License
  *  @link https://github.com/eminmuhammadi/HideMyAss
 
-* Copyright (c) 2019 Emin Mühəmmədi
+* Copyright (c) 2019 Emin Muhammadi
 
 * Permission is hereby granted, free of charge, to any person obtaining a copy* 
 * of this software and associated documentation files (the "Software"), to deal
