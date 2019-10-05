@@ -58,7 +58,8 @@ HideMyAss
 ```
 ## Applications
 
- * [Restful API](applications/api.php) ([demo](https://api.linkedit.ml)) supporting Cloudflare
+ [Restful API](applications/api.php) ([demo](https://api.linkedit.ml)) supporting Cloudflare
+ 
  * `algo`  - Algorithms which are illustrated upside on the table
  *  `secret_key`
  *  `private_key`
