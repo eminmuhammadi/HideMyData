@@ -62,7 +62,7 @@ HideMyAss
  * `algo`  - Algorithms which are illustrated upside on the table
  *  `secret_key`
  *  `private_key`
- *  `action` - decrypt | encrtpy
+ *  `action` - decrypt | encrypt
  *  `text`
  
  ```json
