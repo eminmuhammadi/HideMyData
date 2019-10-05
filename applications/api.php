@@ -10,8 +10,8 @@ require_once '../vendor/autoload.php';
 /**
 *   Error Reporting
 */
-error_reporting(1);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
 
 /**
 *   TimeZone Setting
@@ -34,30 +34,30 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 
 $response = [
-	'algo'        => $_GET['algo'],
-	'action'      => $_GET['action'],
-	'text'        => $_GET['text'],
-	'secret_key'  => $_GET['secret_key'],
-	'private_key' => $_GET['private_key'],
+	'algo'        => $_REQUEST['algo'],
+	'action'      => $_REQUEST['action'],
+	'text'        => $_REQUEST['text'],
+	'secret_key'  => $_REQUEST['secret_key'],
+	'private_key' => $_REQUEST['private_key'],
 ];
 
 
-if( (!empty($_GET['algo'])) && (!empty($_GET['action'])) && (!empty($_GET['text'])) && (!empty($_GET['secret_key'])) && (!empty($_GET['private_key']))) 
+if( (!empty($_REQUEST['algo'])) && (!empty($_REQUEST['action'])) && (!empty($_REQUEST['text'])) && (!empty($_REQUEST['secret_key'])) && (!empty($_REQUEST['private_key']))) 
 
 {
 
-if( (isset($_GET['algo'])) && (isset($_GET['action'])) && (isset($_GET['text'])) && (isset($_GET['secret_key'])) && (isset($_GET['private_key']))) 
+if( (isset($_REQUEST['algo'])) && (isset($_REQUEST['action'])) && (isset($_REQUEST['text'])) && (isset($_REQUEST['secret_key'])) && (isset($_REQUEST['private_key']))) 
 
 {
 
-	if($_GET['action'] == 'decrypt') 
+	if($_REQUEST['action'] == 'decrypt') 
 	{
-		$response['consequence'] = (new eminmuhammadi\HideMyAss\HideMyAss($_GET['private_key'],$_GET['secret_key'],$_GET['algo']))->decrypt($_GET['text']);
+		$response['consequence'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['private_key'],$_REQUEST['secret_key'],$_REQUEST['algo']))->decrypt($_REQUEST['text']);
 	}
 	
-	else if ($_GET['action'] == 'encrypt') 
+	else if ($_REQUEST['action'] == 'encrypt') 
 	{
-		$response['consequence'] = (new eminmuhammadi\HideMyAss\HideMyAss($_GET['private_key'],$_GET['secret_key'],$_GET['algo']))->encrypt($_GET['text']);
+		$response['consequence'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['private_key'],$_REQUEST['secret_key'],$_REQUEST['algo']))->encrypt($_REQUEST['text']);
 	}
 
 	$details = [
