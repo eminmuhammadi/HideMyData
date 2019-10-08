@@ -103,10 +103,10 @@
 					<p>There isn't any data for the time period selected to show.It's possible that you never crypted yet.</p>
 				</div>`);
 			$('#total_list').html('0')
-			$('#encrypt').attr('disabled', true);
+			$('#clear').attr('disabled', true);
 		}
 		else {
-			$('#encrypt').attr('disabled', false);
+			$('#clear').attr('disabled', false);
 		}
 	}	
 
