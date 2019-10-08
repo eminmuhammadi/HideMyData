@@ -58,6 +58,7 @@ HideMyAss
 ```
 ## Applications
 
+ [Progressive Web Application](applications/pwa) ([demo](https://linkedit.ml)) supporting Cloudflare
  [Restful API](applications/api.php) ([demo](https://api.linkedit.ml)) supporting Cloudflare
  
  * `algo`  - Algorithms which are illustrated upside on the table
