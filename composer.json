@@ -17,5 +17,8 @@
         },
         "classmap": ["src/"]
     },
-    "require": {}
+    "require": {
+      "ext-openssl": "*",
+      "ext-json": "*"
+    }
 }
