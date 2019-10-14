@@ -245,7 +245,7 @@
 <script type="text/javascript" src="assets/app.js"></script>
 
 <!-- Service Worker -->
-<script type="text/javascript">if('serviceWorker' in navigator){navigator.serviceWorker.register('assets/service-worker.js').then(function(registration){console.log('ServiceWorker registration successful with scope: ',registration.scope)}).catch(function(err){console.log('ServiceWorker registration failed: ',err)})}</script>
+<script type="text/javascript">if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js').then(function(registration){console.log('ServiceWorker registration successful with scope: ',registration.scope)}).catch(function(err){console.log('ServiceWorker registration failed: ',err)})}</script>
 
 </body>
 </html>	
