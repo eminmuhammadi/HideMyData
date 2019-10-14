@@ -111,6 +111,7 @@ $data = [
 		*  @link https://cloudflare.com
 		*  Headers powered by Cloudflare (c)
 		*/
+		
 		'location'	 => $_SERVER["HTTP_CF_IPCOUNTRY"],
 		'ip'      	 => $_SERVER["HTTP_CF_CONNECTING_IP"],
 		'ray'     	 => $_SERVER["HTTP_CF_RAY"],
@@ -119,8 +120,8 @@ $data = [
 		/**
 		*  Cookies disabled due to security reason
 		*  @TODO cookie based security reason
-		*
-		cookie' 	 => $_COOKIE,*/
+		*/
+		//'cookie' 	 => $_COOKIE,
 
 		'method'     => $_SERVER['REQUEST_METHOD'],
 		'user_agent' => $_SERVER['HTTP_USER_AGENT'],
