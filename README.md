@@ -62,6 +62,8 @@ HideMyAss
  
  - [Restful API](pwa/api.php) ([demo](https://api.linkedit.ml)) supporting Cloudflare
  
+  `* * *`
+
  *  `algo`  - Algorithms which are illustrated upside on the table
  *  `s_key`
  *  `p_key`
@@ -89,7 +91,7 @@ HideMyAss
             "text": "HideMyAss",
             "s_key": "secret-key",
             "p_key": "public-key",
-            "consequence": "dDE3RHlZWmdRblMyOGY3TTJvd1I0UT09"
+            "result": "dDE3RHlZWmdRblMyOGY3TTJvd1I0UT09"
         },
         "information": {
             "status": "1",
