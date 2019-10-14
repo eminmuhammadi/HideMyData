@@ -20,7 +20,7 @@ composer require eminmuhammadi/hidemyass:dev-master
 include_once 'vendor/autoload.php';
 ```
 ## Coding
-Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `Public Key`  must be selected by individuals who need to use symmetric encryption. There are a couple of `algorithms` divided into 2 part.
+Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `Public Key`  must be selected by individuals who need to use asymmetric encryption. There are a couple of `algorithms` divided into 2 part.
 
 | 8 bytes | 16 bytes |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
