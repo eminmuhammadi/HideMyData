@@ -20,7 +20,7 @@ composer require eminmuhammadi/hidemyass:dev-master
 include_once 'vendor/autoload.php';
 ```
 ## Coding
-Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `public Key`  must be selected by individuals who need to use symmetric encryption. There are a couple of `algorithms` divided into 2 part.
+Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `Public Key`  must be selected by individuals who need to use symmetric encryption. There are a couple of `algorithms` divided into 2 part.
 
 | 8 bytes | 16 bytes |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,10 +62,10 @@ HideMyAss
  
  - [Restful API](pwa/api.php) ([demo](https://api.linkedit.ml)) supporting Cloudflare
  
- * `algo`  - Algorithms which are illustrated upside on the table
- *  `secret_key`
- *  `public_key`
- *  `action` - decrypt | encrypt
+ *  `algo`  - Algorithms which are illustrated upside on the table
+ *  `s_key`
+ *  `p_key`
+ *  `action` - (decrypt | encrypt)
  *  `text`
  
  ```json
@@ -87,8 +87,8 @@ HideMyAss
             "algo": "bf",
             "action": "encrypt",
             "text": "HideMyAss",
-            "secret_key": "secret-key",
-            "public_key": "public-key",
+            "s_key": "secret-key",
+            "p_key": "public-key",
             "consequence": "dDE3RHlZWmdRblMyOGY3TTJvd1I0UT09"
         },
         "information": {
