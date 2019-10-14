@@ -1,4 +1,4 @@
-# HideMyAss
+# HideMyAss (v1.0.1)
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP 
 
@@ -77,7 +77,6 @@ HideMyAss
         "ip": null,
         "ray": null,
         "visitor": null,
-        "cookie": [],
         "method": "GET",
         "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/76.0.3809.132 Safari\/537.36",
         "id": null,
