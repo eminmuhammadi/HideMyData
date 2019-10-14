@@ -30,9 +30,9 @@
 		var algo = data.response.var.algo;
 		var action = data.response.var.action;
 		var text = data.response.var.text;
-		var secret_key = data.response.var.secret_key;
-		var private_key = data.response.var.private_key;
-		var consequence = data.response.var.consequence;
+		var s_key = data.response.var.s_key;
+		var p_key = data.response.var.p_key;
+		var result = data.response.var.result;
 
 		var success = data.response.information.status;
 		var execution_time = data.response.execution_time;
@@ -54,7 +54,7 @@
 					<div class="card root_list">
 					  <div class="card-header">
 					    <div class="info `+_class+`"></div>
-					    <a target="_blank" href="https://`+window.location.hostname+`/#/`+action+`/`+algo+`/`+text+`/`+secret_key+`/`+private_key+`">↗ https://`+window.location.hostname+`/#/`+action+`/`+algo+`/`+text+`/`+secret_key+`/`+private_key+`</a>
+					    <a target="_blank" href="https://`+window.location.hostname+`/#/`+action+`/`+algo+`/`+text+`/`+s_key+`/`+p_key+`">↗ https://`+window.location.hostname+`/#/`+action+`/`+algo+`/`+text+`/`+s_key+`/`+p_key+`</a>
 					  </div>
 					  <div class="card-body p-0 m-0">
 					  	<div class="m-0 p-0">
@@ -66,19 +66,19 @@
 								  </tr>
 								  <tr>
 								    <td>Secret Key</td>
-								    <td>`+secret_key+`</td>
+								    <td>`+s_key+`</td>
 								  </tr>
 								  <tr>
-								    <td>Private Key</td>
-								    <td>`+private_key+`</td>
+								    <td>Public Key</td>
+								    <td>`+p_key+`</td>
 								  </tr>
 								  <tr>
 								    <td>Text</td>
 								    <td>`+text+`</td>
 								  </tr>
 								  <tr>
-								    <td><strong>Consequence</strong></td>
-								    <td><kbd>`+consequence+`</kbd></td>
+								    <td><strong>Result</strong></td>
+								    <td><kbd>`+result+`</kbd></td>
 								  </tr>    
   								</table>
 							</div>
@@ -102,7 +102,7 @@
 					<h4>⌛ No data for this time period</h4>
 					<p>There isn't any data for the time period selected to show.It's possible that you never crypted yet.</p>
 				</div>`);
-			$('#total_list').html('0')
+			$('#total_list').html('0');
 			$('#clear').attr('disabled', true);
 		}
 		else {
@@ -191,7 +191,7 @@ $(document).ready(function() {
 	 *   Router
 	 */
 	var router = new Navigo(null, true, '#');
-	var API_PROVIDER = '/applications/api.php';
+	var API_PROVIDER = 'api.php';
 
 
 
@@ -204,8 +204,8 @@ $(document).ready(function() {
 		    action : 'encrypt',
 		    algo   : $('#algo').val(),
 		    text   : $('#text').val(),
-		    secret_key : $('#skey').val(),
-		    private_key: $('#pkey').val()
+		    s_key : $('#skey').val(),
+		    p_key: $('#pkey').val()
 		});
 
         event.preventDefault();
@@ -220,8 +220,8 @@ $(document).ready(function() {
 		    action : 'decrypt',
 		    algo   : $('#algo').val(),
 		    text   : $('#text').val(),
-		    secret_key : $('#skey').val(),
-		    private_key: $('#pkey').val()
+		    s_key : $('#skey').val(),
+		    p_key: $('#pkey').val()
 		});
 
         event.preventDefault();
@@ -300,8 +300,6 @@ $(document).ready(function() {
 				$("#root").append(Error(msg_err));
 
 			}
-
-			event.preventDefault();
 		});
 	}
 
@@ -314,8 +312,8 @@ $(document).ready(function() {
 		    action : params.action,
 		    algo   : params.algo,
 		    text   : params.text,
-		    secret_key : params.skey,
-		    private_key: params.pkey
+		    s_key  : params.skey,
+		    p_key  : params.pkey
 		});
 		
 	});

@@ -3,6 +3,8 @@
     "description": "Managing a couple of algorithms to decrypt or encrypt text",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,    
     "authors": [
         {
             "name": "Emin Muhammadi",

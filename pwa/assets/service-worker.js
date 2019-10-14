@@ -4,14 +4,14 @@ workbox.googleAnalytics.initialize();
 
 workbox.core.setCacheNameDetails({
   prefix: 'linkedit-ml',
-  suffix: 'v1.0.0',
+  suffix: 'v1.0.1',
   precache: 'linkedit-custom-precache-name',
   runtime: 'linkedit-custom-runtime-name'
 });
 
 
 workbox.routing.registerRoute(
-  '/index.php',
+  'index.php',
   new workbox.strategies.CacheFirst(),
 );
 
@@ -21,12 +21,12 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  '/app.js',
+  'assets/app.js',
   new workbox.strategies.CacheFirst(),
 );
 
 workbox.routing.registerRoute(
-  '/style.css',
+  'assets/style.css',
   new workbox.strategies.CacheFirst(),
 );
 

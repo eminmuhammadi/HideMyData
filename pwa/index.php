@@ -4,10 +4,29 @@
 	ini_set('display_errors', 0);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
+
+	<!-- 
+	    LINKEDIT.ml @link https://linkedit.ml
+		GITHUB @link https://github.com/eminmuhammadi/hidemyass
+
+
+	
+		latest update	 @date 10/14/2019		
+	!-->
+
+	<link rel="dns-prefetch" href="//www.googletagmanager.com">
+	<link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//code.jquery.com">
+
+
 	<meta charset="utf-8">
+
+	<link rel="shortcut icon" href="static/favicon.ico" />
+
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="msapplication-starturl" content="/">
@@ -20,32 +39,56 @@
 	<meta name="title" content="Crypto Calculator | Linkedit">
 	<meta name="description" content="Managing a couple of algorithms to decrypt or encrypt text">
 
-	<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="manifest.json">
+	<link rel="apple-touch-icon" sizes="57x57" href="static/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="static/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="static/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="static/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="static/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="static/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="static/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="static/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="static/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="static/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="static/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+	<link rel="manifest" href="assets/manifest.json">
 	<meta name="msapplication-TileColor" content="#000">
-	<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+	<meta name="msapplication-TileImage" content="static/ms-icon-144x144.png">
 	<meta name="theme-color" content="#000">
 
+	<script async src="//www.googletagmanager.com/gtag/js?id=UA-124804614-1" type="text/javascript"></script>
+	<script type="text/javascript">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-124804614-1');
+	</script>
+
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<!-- APP CSS -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
 	
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
+
+
+	<!-- SEO -->
+	<meta name="description" content="Managing a couple of algorithms to decrypt or encrypt text">
+	<meta name="canonical" content="https://linkedit.ml">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://linkedit.ml">
+	<meta property="og:title" content="Crypto Calculator | Linkedit">
+	<meta property="og:description" content="Managing a couple of algorithms to decrypt or encrypt text">
+	<meta property="og:image" content="static/linkedit-ml.png">
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="/">
+	<meta property="twitter:title" content="Crypto Calculator | Linkedit">
+	<meta property="twitter:description" content="Managing a couple of algorithms to decrypt or encrypt text">
+	<meta property="twitter:image" content="static/linkedit-ml.png">
 
 </head>
 
@@ -60,7 +103,7 @@
 		</div>
 	</div>
 	<div class="notification bg-light">
-		<p class="container">Don't miss, leave a star or fork. Check out github <a target="_blank" href="https://github.com/eminmuhammadi/HideMyAss">↗ repository</a></p>
+		<p class="container">Don't miss, leave a star or fork. Check out github <a target="_blank"  rel="noreferer" href="https://github.com/eminmuhammadi/HideMyAss">↗ repository</a></p>
 	</div>	
 
 	<!-- Calculator -->
@@ -72,6 +115,7 @@
 					<form class="mt-1" method="POST">
 					
 						<div class="input-group mb-3 pt-3">
+
 							<div class="input-group-prepend">
 								<label class="input-group-text">Algorithm :</label>
 							</div>
@@ -120,7 +164,7 @@
 
 					    <div class="form-group">
 					   		<input type="text" id="pkey" class="form-control" required>
-					        <label class="form-control-placeholder" for="pkey">Private Key</label>
+					        <label class="form-control-placeholder" for="pkey">Public Key</label>
 					    </div>
 
 					    <div class="form-group">
@@ -140,7 +184,7 @@
 			<div class="col-md-8">
 				<div class="mt-4 root-tool container d-flex justify-content-between">
 					<div class="count-list">
-						Total : <strong><span id="total_list"></span></strong> data.
+						Total : <strong><span id="total_list">0</span></strong> data.
 					</div>
 					<div>
 						<button id="clear" class="float-right btn btn-sm btn-dark">Clear</button>
@@ -158,7 +202,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<p>Subscribe to the newsletter <a target="_blank" href="https://linkedit-ml.us18.list-manage.com/subscribe/post?u=51cffc7b5be143864ea408903&amp;id=c002ade545">↗ via link</a>, or</p>
+						<p>Subscribe to the newsletter <a rel="noreferer" target="_blank" href="https://linkedit-ml.us18.list-manage.com/subscribe/post?u=51cffc7b5be143864ea408903&amp;id=c002ade545">↗ via link</a>, or</p>
 					</div>
 
 					<div class="col-md-6 email">
@@ -177,19 +221,19 @@
 
 		<ul class="nav justify-content-end">
 		  <li class="nav-item">
-		    <a class="nav-link" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss/blob/master/LICENSE">License</a>
+		    <a class="nav-link" rel="noreferer" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss/blob/master/LICENSE">License</a>
 		  </li>			
 		  <li class="nav-item">
-		    <a class="nav-link" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss">Github</a>
+		    <a class="nav-link" rel="noreferer" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss">Github</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss/issues">Issues</a>
+		    <a class="nav-link" rel="noreferer" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss/issues">Issues</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss/graphs/contributors">Contributors</a>
+		    <a class="nav-link" rel="noreferer" target="_blank" href="https://github.com/eminmuhammadi/HideMyAss/graphs/contributors">Contributors</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" target="_blank" href="https://github.com/eminmuhammadi">@eminmuhamadi</a>
+		    <a class="nav-link" rel="noreferer" target="_blank" href="https://github.com/eminmuhammadi">@eminmuhamadi</a>
 		  </li>
 		</ul>
 	</div>	
@@ -198,10 +242,10 @@
 <script src="//code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <!-- APP -->
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="assets/app.js"></script>
 
 <!-- Service Worker -->
-<script type="text/javascript">if('serviceWorker' in navigator){navigator.serviceWorker.register('serviceworker.js').then(function(registration){console.log('ServiceWorker registration successful with scope: ',registration.scope)}).catch(function(err){console.log('ServiceWorker registration failed: ',err)})}</script>
+<script type="text/javascript">if('serviceWorker' in navigator){navigator.serviceWorker.register('assets/service-worker.js').then(function(registration){console.log('ServiceWorker registration successful with scope: ',registration.scope)}).catch(function(err){console.log('ServiceWorker registration failed: ',err)})}</script>
 
 </body>
 </html>	

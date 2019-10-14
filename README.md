@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 You need to install using Composer
 
 ```bash
-composer require eminmuhammadi/hidemyass
+composer require eminmuhammadi/hidemyass:dev-master
 ```
 
 ### Installing
@@ -20,7 +20,7 @@ composer require eminmuhammadi/hidemyass
 include_once 'vendor/autoload.php';
 ```
 ## Coding
-Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `Private Key`  must be selected by individuals who need to use symmetric encryption. There are a couple of `algorithms` divided into 2 part.
+Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `public Key`  must be selected by individuals who need to use symmetric encryption. There are a couple of `algorithms` divided into 2 part.
 
 | 8 bytes | 16 bytes |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -33,7 +33,7 @@ Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 
 $text = 'HideMyAss';
 $algo = 'bf';
 
-$hider = (new eminmuhammadi\HideMyAss\HideMyAss('private-key','secret-key',$algo));
+$hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key','secret-key',$algo));
 
 $data = $hider->encrypt($text);
 
@@ -47,7 +47,7 @@ dDE3RHlZWmdRblMyOGY3TTJvd1I0UT09
 $text = 'dDE3RHlZWmdRblMyOGY3TTJvd1I0UT09';
 $algo = 'bf';
 
-$hider = (new eminmuhammadi\HideMyAss\HideMyAss('private-key','secret-key',$algo));
+$hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key','secret-key',$algo));
 
 $data = $hider->decrypt($text);
 
@@ -64,7 +64,7 @@ HideMyAss
  
  * `algo`  - Algorithms which are illustrated upside on the table
  *  `secret_key`
- *  `private_key`
+ *  `public_key`
  *  `action` - decrypt | encrypt
  *  `text`
  
@@ -89,7 +89,7 @@ HideMyAss
             "action": "encrypt",
             "text": "HideMyAss",
             "secret_key": "secret-key",
-            "private_key": "private-key",
+            "public_key": "public-key",
             "consequence": "dDE3RHlZWmdRblMyOGY3TTJvd1I0UT09"
         },
         "information": {

@@ -28,23 +28,42 @@
 */
 
 namespace eminmuhammadi\HideMyAss;
-
+/**
+*  @TODO add WIKI
+*/ 
 class HideMyAss
 {
-    
-    function __construct($private,$secret,$algo)
+
+    /**
+      *  Main Constructor
+      */
+    function __construct($public,$secret,$algo)
     {
         $this->secret  = md5($secret);
-        $this->private = md5(sha1($private)); 
+        $this->public = md5(sha1($public)); 
         $this->algo    = $algo;
     }
 
+
+    /**
+      *  Chiper
+      */
     public function chiper($algo) 
     { 
+
+    /**
+      *  8 byte length
+      */       
         $_8byte=array("BF-CBC","BF-CFB","BF-OFB","bf-cbc","bf-cfb","bf-ofb","cast5-cbc","cast5-cfb","cast5-ofb","BF","CAST","CAST-cbc","bf","blowfish","cast","cast-cbc");
        
+    /**
+      *  16 byte length
+      */       
         $_16byte=array("AES-128-CBC","AES-128-CFB","AES-128-CFB1","AES-128-CFB8","AES-128-OFB","AES-192-CFB","AES-192-CFB1","AES-192-OFB","AES-256-CBC","AES-256-CFB","AES-256-CFB1","AES-256-CFB8","AES-256-OFB","aes-128-cbc","aes-128-cfb","aes-128-cfb1","aes-128-cfb8","aes-128-ofb","aes-192-cbc","aes-192-cfb","aes-192-cfb1","aes-192-cfb8","aes-192-ofb","aes-256-cbc","aes-256-cfb","aes-256-cfb1","aes-256-cfb8","aes-256-ofb","AES128","AES192","AES256","aes128","aes192","aes256");
 
+    /**
+      *  Check Length
+      */
         if(in_array($algo, $_8byte)) { 
 
             return '8'; 
@@ -60,6 +79,10 @@ class HideMyAss
         }
     }
 
+
+    /**
+      *  Hasher
+      */
     public function hasher($pkey,$skey,$chiper) 
     {
         $_pkey = hash('sha256', $pkey );
@@ -68,19 +91,25 @@ class HideMyAss
         return ['hashed_pkey'=>$_pkey,'hashed_skey'=>$_skey];
     }
 
+    /**
+      *  Decrypt
+      */
     public function decrypt($text) 
     { 
 
-        $hasher = self::hasher($this->private,$this->secret,self::chiper($this->algo));
+        $hasher = self::hasher($this->public,$this->secret,self::chiper($this->algo));
 
         $data = openssl_decrypt(base64_decode($text),$this->algo, $hasher['hashed_pkey'], 0, $hasher['hashed_skey']);
 
         return $data;
     }
 
+    /**
+      *  Enrypt
+      */
     public function encrypt($text) 
     {
-        $hasher = self::hasher($this->private,$this->secret,self::chiper($this->algo));
+        $hasher = self::hasher($this->public,$this->secret,self::chiper($this->algo));
 
         $data = base64_encode(openssl_encrypt($text,$this->algo, $hasher['hashed_pkey'], 0, $hasher['hashed_skey']));
 

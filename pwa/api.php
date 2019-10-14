@@ -5,7 +5,7 @@
 *   @author Emin Muhammadi
 */
 
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 /**
  *   Error Reporting
@@ -37,27 +37,43 @@ $response = [
 	'algo'        => $_REQUEST['algo'],
 	'action'      => $_REQUEST['action'],
 	'text'        => $_REQUEST['text'],
-	'secret_key'  => $_REQUEST['secret_key'],
-	'private_key' => $_REQUEST['private_key'],
+	's_key'       => $_REQUEST['s_key'],
+	'p_key'       => $_REQUEST['p_key'],
 ];
 
 
-if( (!empty($_REQUEST['algo'])) && (!empty($_REQUEST['action'])) && (!empty($_REQUEST['text'])) && (!empty($_REQUEST['secret_key'])) && (!empty($_REQUEST['private_key']))) 
+if( (!empty($_REQUEST['algo'])) && (!empty($_REQUEST['action'])) && (!empty($_REQUEST['text'])) && (!empty($_REQUEST['s_key'])) && (!empty($_REQUEST['p_key']))) 
 
 {
 
-if( (isset($_REQUEST['algo'])) && (isset($_REQUEST['action'])) && (isset($_REQUEST['text'])) && (isset($_REQUEST['secret_key'])) && (isset($_REQUEST['private_key']))) 
+if( (isset($_REQUEST['algo'])) && (isset($_REQUEST['action'])) && (isset($_REQUEST['text'])) && (isset($_REQUEST['s_key'])) && (isset($_REQUEST['p_key']))) 
 
 {
 
 	if($_REQUEST['action'] == 'decrypt') 
 	{
-		$response['consequence'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['private_key'],$_REQUEST['secret_key'],$_REQUEST['algo']))->decrypt($_REQUEST['text']);
+		$response['result'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['p_key'],$_REQUEST['s_key'],$_REQUEST['algo']))->decrypt($_REQUEST['text']);
+
+		/**
+		 *  Public Key and Secret Key mismatch
+		*/
+
+		if($response['result']==false) {
+			$response['result']=null;
+		}
 	}
 	
 	else if ($_REQUEST['action'] == 'encrypt') 
 	{
-		$response['consequence'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['private_key'],$_REQUEST['secret_key'],$_REQUEST['algo']))->encrypt($_REQUEST['text']);
+		$response['result'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['p_key'],$_REQUEST['s_key'],$_REQUEST['algo']))->encrypt($_REQUEST['text']);
+
+		/**
+		 *  Public Key and Secret Key mismatch
+		*/
+
+		if($response['result']==false) {
+			$response['result']=null;
+		}		
 	}
 
 	$details = [
@@ -87,18 +103,31 @@ if( (isset($_REQUEST['algo'])) && (isset($_REQUEST['action'])) && (isset($_REQUE
 */
 $data = [
 	'request'   => [
+
 		'date'       => date("Y-m-d H:i:s"),
 		'timezone'   => date_default_timezone_get(),
+
+		/**
+		*  @link https://cloudflare.com
+		*  Headers powered by Cloudflare (c)
+		*/
 		'location'	 => $_SERVER["HTTP_CF_IPCOUNTRY"],
 		'ip'      	 => $_SERVER["HTTP_CF_CONNECTING_IP"],
 		'ray'     	 => $_SERVER["HTTP_CF_RAY"],
 		'visitor' 	 => $_SERVER["HTTP_CF_VISITOR"],
-		'cookie' 	 => $_COOKIE,
+
+		/**
+		*  Cookies disabled due to security reason
+		*  @TODO cookie based security reason
+		*
+		cookie' 	 => $_COOKIE,*/
+
 		'method'     => $_SERVER['REQUEST_METHOD'],
 		'user_agent' => $_SERVER['HTTP_USER_AGENT'],
 		'id'         => $_SERVER['UNIQUE_ID'],
 		'time'       => $_SERVER['REQUEST_TIME']
 	],
+	
 	'response' => [
 		'var' => $response,
 		'information'=> $details,
