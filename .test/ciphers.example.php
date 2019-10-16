@@ -20,5 +20,8 @@
     $cipher_aliases = array_filter($cipher_aliases,function($c) { return stripos($c,"des")===FALSE; } );
     $cipher_aliases = array_filter($cipher_aliases,function($c) { return stripos($c,"rc2")===FALSE; } );
 
+    /**
+     *  List
+     */
     header("Content-Type: application/json; charset=UTF-8");
     print(json_encode([$ciphers,$cipher_aliases],JSON_PRETTY_PRINT));
