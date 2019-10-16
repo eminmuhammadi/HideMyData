@@ -1,0 +1,61 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "c7bb20894f5fb63072c9cc72beeb464f",
+    "packages": [
+        {
+            "name": "eminmuhammadi/hidemyass",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eminmuhammadi/HideMyAss.git",
+                "reference": "db199bc4162a139729c9e1e78a2f1b8b650d9ad6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eminmuhammadi/HideMyAss/zipball/db199bc4162a139729c9e1e78a2f1b8b650d9ad6",
+                "reference": "db199bc4162a139729c9e1e78a2f1b8b650d9ad6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "php": "^7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "eminmuhammadi\\hidemyass\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emin Muhammadi",
+                    "email": "muemin17631@sabah.edu.az"
+                }
+            ],
+            "description": "Managing a couple of algorithms to decrypt or encrypt text",
+            "time": "2019-10-16T14:19:59+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "eminmuhammadi/hidemyass": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
