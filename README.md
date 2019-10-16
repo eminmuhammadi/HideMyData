@@ -159,8 +159,10 @@ Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 
 ]
 ```
 
-### Basic Use
-#### Encryption :
+## Basic Use
+
+### Encryption :
+
 ```php
 <?php
 
@@ -179,10 +181,13 @@ Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 
         print($e);
     }
 ```
+
 ```text
 MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09
 ```
+
 ### Decryption :
+
 ```php
 <?php
 
@@ -201,9 +206,11 @@ MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09
         print($e);
     }
 ```
+
 ```text
 HideMyAss
 ```
+
 ## Applications
 
  - [Progressive Web Application](pwa) ([demo](https://linkedit.ml))
