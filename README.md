@@ -1,4 +1,4 @@
-# HideMyAss (v1.0.2)
+# HideMyAss (v1.1.0)
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP 
 
