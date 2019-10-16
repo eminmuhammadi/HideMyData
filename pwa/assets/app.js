@@ -260,35 +260,35 @@ $(document).ready(function() {
 			var msg_err = "";
 			if (jqXHR.status === 0) {
 				msg_err = "Not connect. Verify Network.";
-				$("#root").append();
+				console.log(msg_err);
 			} 
 			else if (jqXHR.status == 404) {
 				msg_err = "Requested page not found. [404]";
-				$("#root").append(Error(msg_err));
+				console.log(msg_err);
 			} 
 			else if (jqXHR.status == 500) {
 				msg_err = "Internal Server Error [500].";
-				$("#root").append(Error(msg_err));
+				console.log(msg_err);
 
 			} 
 			else if (exception === "parsererror") {
 				msg_err = "Requested JSON parse failed.";
-				$("#root").append(Error(msg_err));
+				console.log(msg_err);
 
 			} 
 			else if (exception === "timeout") {
 				msg_err = "Time out error.";
-				$("#root").append(Error(msg_err));
+				console.log(msg_err);
 
 			} 
 			else if (exception === "abort") {
 				msg_err = "Ajax request aborted.";
-				$("#root").append(Error(msg_err));
+				console.log(msg_err);
 
 			} 
 			else {
 				msg_err = "Uncaught Error. "+ jqXHR.responseText;
-				$("#root").append(Error(msg_err));
+				console.log(msg_err);
 
 			}
 		});
