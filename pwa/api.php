@@ -46,39 +46,70 @@ if ((!empty($_REQUEST['algo'])) && (!empty($_REQUEST['action'])) && (!empty($_RE
 
 	if ((isset($_REQUEST['algo'])) && (isset($_REQUEST['action'])) && (isset($_REQUEST['text'])) && (isset($_REQUEST['s_key'])) && (isset($_REQUEST['p_key']))) {
 
+        /**
+         *  Decryption
+         */
 		if ($_REQUEST['action'] == 'decrypt') {
-			$response['result'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['p_key'], $_REQUEST['s_key'], $_REQUEST['algo']))->decrypt($_REQUEST['text']);
 
-			/**
-			 *  Public Key and Secret Key mismatch
-			 */
+            try {
+                $response['result'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['p_key'], $_REQUEST['s_key'], $_REQUEST['algo']))->decrypt($_REQUEST['text']);
+                if($response['result'] == false || $response['result'] == null){
+                    $details = [
+                        'status'  => '0',
+                        'message' => 'Fatal Error'
+                    ];
+                }
+            }
+            catch (Exception $e) {
+                $response['result'] = null;
+                $details = [
+                    'status'  => '0',
+                    'message' => $e
+                ];
+            }
 
-			if ($response['result'] == false) {
-				$response['result'] = null;
-			}
-		} else if ($_REQUEST['action'] == 'encrypt') {
-			$response['result'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['p_key'], $_REQUEST['s_key'], $_REQUEST['algo']))->encrypt($_REQUEST['text']);
+        }
 
-			/**
-			 *  Public Key and Secret Key mismatch
-			 */
 
-			if ($response['result'] == false) {
-				$response['result'] = null;
-			}
+        /**
+         *  Encryption
+         */
+		else if ($_REQUEST['action'] == 'encrypt') {
+            try {
+                $response['result'] = (new eminmuhammadi\HideMyAss\HideMyAss($_REQUEST['p_key'], $_REQUEST['s_key'], $_REQUEST['algo']))->encrypt($_REQUEST['text']);
+                if($response['result'] == false || $response['result'] == null){
+                    $details = [
+                        'status'  => '0',
+                        'message' => 'Fatal Error'
+                    ];
+                }
+            }
+
+            catch (Exception $e) {
+                $response['result'] = null;
+                $details = [
+                    'status'  => '0',
+                    'message' => $e
+                ];
+            }
 		}
 
-		$details = [
-			'status'  => '1',
-			'message' => 'Success'
-		];
-	} else {
-		$details = [
-			'status'  => '0',
-			'message' => 'Please provide accuretaly variables'
-		];
-	}
-} else {
+        /**
+         *  Error when method is mismatch
+         */
+        else {
+            $response['result']=null;
+            $details = [
+                'status'  => '0',
+                'message' => 'Please provide correct method'
+            ];
+        }
+}}
+
+/**
+ *  Error when params is mismatch
+ */
+else {
 	$details = [
 		'status'  => '0',
 		'message' => 'Please use all required variables'

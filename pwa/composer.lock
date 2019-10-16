@@ -12,13 +12,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eminmuhammadi/HideMyAss.git",
-                "reference": "66109e2062d1f191080eec042f8e43cbfd82e7e6"
+                "reference": "d3bca5c956b9d3a3867750ad15bf1b3454cec7a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eminmuhammadi/HideMyAss/zipball/66109e2062d1f191080eec042f8e43cbfd82e7e6",
-                "reference": "66109e2062d1f191080eec042f8e43cbfd82e7e6",
+                "url": "https://api.github.com/repos/eminmuhammadi/HideMyAss/zipball/d3bca5c956b9d3a3867750ad15bf1b3454cec7a9",
+                "reference": "d3bca5c956b9d3a3867750ad15bf1b3454cec7a9",
                 "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*"
             },
             "type": "library",
             "autoload": {
@@ -40,7 +44,7 @@
                 }
             ],
             "description": "Managing a couple of algorithms to decrypt or encrypt text",
-            "time": "2019-10-14T18:37:41+00:00"
+            "time": "2019-10-14T21:07:02+00:00"
         }
     ],
     "packages-dev": [],
