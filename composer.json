@@ -1,5 +1,6 @@
 {
     "name": "eminmuhammadi/hidemyass",
+    "version":"1.1.1",
     "description": "Managing a couple of algorithms to decrypt or encrypt text",
     "type": "library",
     "license": "MIT",
