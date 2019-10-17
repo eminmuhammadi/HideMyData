@@ -1,7 +1,19 @@
-# HideMyAss (v1.1.1)
+# HideMyAss (v1.2.0)
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP 
+[(demo project)](https://github.com/eminmuhammadi/HideMyAss)
+## Changelogs
+* v1.2.0
 
+  * Removed PWA. Created new repository at [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass).
+  * Added key limitings. Now you can use a time limit for validation of keys.
+  * Added new examples at [.test/](.test/)
+  * README changed.
+
+* v1.1.1
+  * Docblocks generated.  
+  * Created new directory for tests
+  
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -25,7 +37,125 @@ include_once 'vendor/autoload.php';
 ```
 Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `Public Key`  must be selected by individuals who need to use asymmetric encryption. There are a couple of `algorithms` divided into 2 part.
 
-### [Ciphers List -> .test/ciphers.example.php](.test/ciphers.example.php)
+## Basic Use
+
+### Encryption :
+
+```php
+<?php
+
+    require_once 'vendor/autoload.php';
+
+    $text = 'HideMyAss';
+    $algo = 'aes256';
+
+    try {
+        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+
+        $data = $hider->encrypt($text);
+        print($data);
+    }
+    catch (Exception $e) {
+        print($e);
+    }
+```
+Result:
+```text
+MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09
+```
+
+### Decryption :
+
+```php
+<?php
+
+    require_once 'vendor/autoload.php';
+
+    $text = 'MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09';
+    $algo = 'aes256';
+
+    try {
+        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+
+        $data = $hider->decrypt($text);
+        print($data);
+    }
+    catch (Exception $e) {
+        print($e);
+    }
+```
+
+Result:
+```text
+HideMyAss
+```
+
+### Time limiting for encryption|decryption
+```php
+<?php
+
+    require_once 'vendor/autoload.php';
+
+    $text = 'HideMyAss';
+    $algo = 'aes256';
+
+    try {
+        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+
+        /**
+         * @example $date - {5 second} , { 5 minute } , { 5 day } , { 5 month } , { 5 year }
+         */
+        $data = $hider->encrypt($text,'1 minute');
+        print($data);
+    }
+    catch (Exception $e) {
+        print($e);
+    }
+```
+
+Result : 
+```text
+QTRmOGpVMml6MDNVVG5IWERDblgzazNOUmtnRjNKaEJ2Mzg4Y0Y5ZS9xaEczRnJvdmhUZ1hEYkVQM2pibUIvRkkrMDBCdU9SNW9OK1JrUmVicjZYQkgwWmFDUEI5WEtQT3MyVm1PZkUrR3BQQ2xFTHRHREYranYvdFk1bE1lamg
+```
+
+```php
+<?php
+
+    require_once 'vendor/autoload.php';
+
+    $text = 'QTRmOGpVMml6MDNVVG5IWERDblgzazNOUmtnRjNKaEJ2Mzg4Y0Y5ZS9xaEczRnJvdmhUZ1hEYkVQM2pibUIvRkkrMDBCdU9SNW9OK1JrUmVicjZYQkgwWmFDUEI5WEtQT3MyVm1PZkUrR3BQQ2xFTHRHREYranYvdFk1bE1lamg';
+    $algo = 'aes256';
+
+    try {
+        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+
+        /**
+         * @example $date - {5 second} , { 5 minute } , { 5 day } , { 5 month } , { 5 year }
+         */
+        $data = $hider->decrypt($text,'1 minute');
+        print($data);
+    }
+
+    /**
+     *   Need to say error because of old data
+     */
+    catch (Exception $e) {
+        print($e);
+    }
+```
+
+```text
+Exception: eminmuhammadi\HideMyAss\decrypt:: - time limited for this keys please update time or generate new one. in H:\Xampp\htdocs\src\hidemyass.php:121 Stack trace: #0 H:\Xampp\htdocs\.test\date-decrypt.example.php(14): eminmuhammadi\HideMyAss\HideMyAss->decrypt('QTRmOGpVMml6MDN...', '1 minute') #1 {main}
+```
+**NOTE !!!** You need to update text because of old time limitation. When time is fresh then it will be like
+
+```text
+HideMyAss
+```
+
+## Ciphers List
+
+### [.test/ciphers.example.php](.test/ciphers.example.php)
 ```json
 [
     {
@@ -157,58 +287,6 @@ Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 
         "169": "sm4"
     }
 ]
-```
-
-## Basic Use
-
-### Encryption :
-
-```php
-<?php
-
-    require_once 'vendor/autoload.php';
-
-    $text = 'HideMyAss';
-    $algo = 'aes256';
-
-    try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
-
-        $data = $hider->encrypt($text);
-        print($data);
-    }
-    catch (Exception $e) {
-        print($e);
-    }
-```
-
-```text
-MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09
-```
-
-### Decryption :
-
-```php
-<?php
-
-    require_once 'vendor/autoload.php';
-
-    $text = 'MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09';
-    $algo = 'aes256';
-
-    try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
-
-        $data = $hider->decrypt($text);
-        print($data);
-    }
-    catch (Exception $e) {
-        print($e);
-    }
-```
-
-```text
-HideMyAss
 ```
 
 ## Applications

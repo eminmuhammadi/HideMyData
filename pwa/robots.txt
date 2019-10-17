@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow: /
-
-Sitemap: http://linkedit.ml/sitemap.xml
