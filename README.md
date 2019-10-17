@@ -291,9 +291,9 @@ HideMyAss
 
 ## Applications
 
- - [Progressive Web Application](pwa) ([demo](https://linkedit.ml))
+ - [Progressive Web Application](https://github.com/eminmuhammadi/create-hidemyass) ([demo](https://linkedit.ml))
  
- - [Restful API](pwa/api.php) ([demo](https://api.linkedit.ml))
+ - [Restful API](https://github.com/eminmuhammadi/create-hidemyass/api.php) ([demo](https://api.linkedit.ml))
  
   `* Parametres *`
 
