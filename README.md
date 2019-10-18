@@ -7,7 +7,7 @@ Managing a couple of algorithms to decrypt or encrypt text, powered by PHP
 
   * Removed PWA. Created new repository at [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass).
   * Added key limitings. Now you can use a time limit for validation of keys.
-  * Added new examples at [.test/](.test/)
+  * Added new examples at [examples/](examples/)
   * README changed.
 
 * v1.1.1
@@ -155,7 +155,7 @@ HideMyAss
 
 ## Ciphers List
 
-### [.test/ciphers.example.php](.test/ciphers.example.php)
+### [examples/ciphers.example.php](examples/ciphers.example.php)
 ```json
 [
     {
