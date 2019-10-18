@@ -1,7 +1,6 @@
 {
     "name": "eminmuhammadi/hidemyass",
     "description": "Managing a couple of algorithms to decrypt or encrypt text",
-    "type": "library",
     "version":"1.3.0",
     "license": "MIT",
     "minimum-stability": "dev",
