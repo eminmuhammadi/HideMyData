@@ -1,8 +1,16 @@
-# HideMyAss (v1.2.0)
+# HideMyAss (v1.3.0) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyAss.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyAss)
+
+
+[![GitHub license](https://img.shields.io/github/license/eminmuhammadi/HideMyAss.svg)](https://github.com/eminmuhammadi/HideMyAss/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/tag/eminmuhammadi/HideMyAss.svg)](https://GitHub.com/eminmuhammadi/HideMyAss/tag/) [![Github all releases](https://img.shields.io/github/downloads/eminmuhammadi/HideMyAss/total.svg)](https://GitHub.com/eminmuhammadi/HideMyAss/releases/)
+
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP 
 [(demo project)](https://github.com/eminmuhammadi/HideMyAss)
 ## Changelogs
+* v1.3.0
+  * Added Test Cases [test/](test/).
+  * Some bugs fixed.
+  
 * v1.2.0
 
   * Removed PWA. Created new repository at [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass).
@@ -287,6 +295,11 @@ HideMyAss
         "169": "sm4"
     }
 ]
+```
+## Test
+
+```bash
+composer run-scripts test
 ```
 
 ## Applications
