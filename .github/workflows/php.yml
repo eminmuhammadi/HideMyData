@@ -10,9 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Test Coverage Installing
-      run: pecl install xdebug && sudo docker-php-ext-enable xdebug
-
     - name: Validate composer.json and composer.lock
       run: composer validate
 
