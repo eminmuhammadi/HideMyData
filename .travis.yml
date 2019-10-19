@@ -13,6 +13,7 @@ install:
 
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
+  - pecl install xdebug && sudo docker-php-ext-enable xdebug
   - composer test -- --coverage-clover=build/logs/clover.xml
   - composer run-script test
 
