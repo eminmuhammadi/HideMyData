@@ -16,11 +16,11 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
-    - name: Coverage Report
-      run: php test/coverage.php build/logs/clover.xml 80  
-
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run Test 
       run: composer run-script test
+      
+    - name: Coverage Report
+      run: php test/coverage.php build/logs/clover.xml 80  
