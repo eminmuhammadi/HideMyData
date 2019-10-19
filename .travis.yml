@@ -19,7 +19,8 @@ script:
 #after_script:
 
 after_success:
-  - bash <(echo success)
+  - php test/coverage.php build/logs/clover.xml 80
+  - echo 'Finished'
 
 #after_failure:
 
