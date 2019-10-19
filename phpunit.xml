@@ -13,6 +13,7 @@
 <testsuites>
     <testsuite name="Test HideMyAss">
         <directory suffix=".php">./test</directory>
+        <exclude>./test/coverage.php</exclude>
     </testsuite>
 </testsuites>
 
