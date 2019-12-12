@@ -1,4 +1,4 @@
-# HideMyAss (v1.3.0) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyAss.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyAss)
+# HideMyAss (v1.3.1) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyAss.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyAss)
 
 
 [![GitHub license](https://img.shields.io/github/license/eminmuhammadi/HideMyAss.svg)](https://github.com/eminmuhammadi/HideMyAss/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/tag/eminmuhammadi/HideMyAss.svg)](https://GitHub.com/eminmuhammadi/HideMyAss/tag/) [![Github all releases](https://img.shields.io/github/downloads/eminmuhammadi/HideMyAss/total.svg)](https://GitHub.com/eminmuhammadi/HideMyAss/releases/)
@@ -6,6 +6,11 @@
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP.
 ## Changelogs
+* v1.3.1
+  * Added Array mode.
+  * Some bugs fixed.
+  
+
 * v1.3.0
   * Added Test Cases [test/](test/).
   * Some bugs fixed.
