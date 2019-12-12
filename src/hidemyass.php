@@ -81,6 +81,7 @@ class HideMyAss
     return ['hashed_pkey' => $_pkey, 'hashed_skey' => $_skey];
   }
 
+
     /**
      * @param $text - Input
      * @param bool $date
@@ -149,6 +150,7 @@ class HideMyAss
      */
   public function encrypt($text, $date=false)
   {
+
       /**
        *  Generate date for setting
        *  active time for keys
@@ -182,4 +184,139 @@ class HideMyAss
       return $data;
   }
 
+
+  /**
+   * @param $Array
+   * @return string
+   *
+   */
+  public function ArrayEncode($Array)
+  {
+
+      $data = base64_encode(serialize($Array));
+      return $data;
+  }
+
+
+  /**
+   * @param $Encoded
+   * @return mixed
+   */
+  public function ArrayDecode($Encoded)
+  {
+
+      $data = unserialize(base64_decode($Encoded));
+      return $data;
+  }
+
+  /**
+   * @param $text
+   * @param bool $date
+   * @return string
+   * @throws \Exception
+   */
+  public function  ArrayEncrypt($text, $date=false)
+  {
+      if(!is_array($text))
+      {
+          throw new \Exception("eminmuhammadi\HideMyAss\ArrayEncrypt:: - Array not given");
+      }
+
+      $text = (new self($this->public, $this->secret, $this->algo))->ArrayEncode($text);
+
+      /**
+       *  Generate date for setting
+       *  active time for keys
+       *
+       *  @example $date - {5 second} , { 5 minute } , { 5 day } , { 5 month } , { 5 year }
+       */
+      if(isset($date) && $date != false) {
+
+          $DATE =  date("Y-m-d H:i:s");
+          $text = [
+              'date' => [
+                  'start' => $DATE,
+                  'end'   => date('Y-m-d H:i:s', strtotime( $DATE.' + '.$date))
+              ],
+              'text' => $text
+          ];
+
+          $text = json_encode($text);
+      }
+
+      /**
+       *  Hash keys
+       */
+      $HASHER = (new self($this->public, $this->secret, $this->algo))->hasher($this->public, $this->secret, $this->iv_num_byte);
+
+      /**
+       *  Generate Data
+       */
+      $data = base64_encode(openssl_encrypt($text, $this->algo, $HASHER['hashed_pkey'], 0, $HASHER['hashed_skey']));
+
+      return $data;
+  }
+
+
+  /**
+   * @param $text
+   * @param bool $date
+   * @return mixed
+   * @throws \Exception
+   */
+  public function ArrayDecrypt($text, $date=false)
+  {
+
+      /**
+       *  Generate date for setting
+       *  error time for keys
+       *
+       *  @example $date - {5 second} , { 5 minute } , { 5 day } , { 5 month } , { 5 year }
+       */
+      if(isset($date) && $date != false) {
+          /**
+           *   Hash keys
+           */
+          $HASHER = (new self($this->public, $this->secret, $this->algo))->hasher($this->public, $this->secret, $this->iv_num_byte);
+
+          /**
+           *  Generate Data
+           */
+          $data = openssl_decrypt(base64_decode($text), $this->algo, $HASHER['hashed_pkey'], 0, $HASHER['hashed_skey']);
+
+          $data = json_decode($data);
+
+          if (!isset($data->date) || !isset($data->text)) {
+
+              throw new \Exception("eminmuhammadi\HideMyAss\ArrayDecrypt:: - data was damaged.");
+          }
+
+          /**
+           *  Check time limitation
+           */
+          if((strtotime($date) - strtotime($data->date->end)) > (strtotime($data->date->end) - strtotime($data->date->start))){
+
+              throw new \Exception("eminmuhammadi\HideMyAss\ArrayDecrypt:: - time limited for this keys please
+             update time or generate new one.");
+          }
+
+          else {
+
+              return (new self($this->public, $this->secret, $this->algo))->ArrayDecode($data->text);
+          }
+      }
+
+      /**
+       *  Hash keys
+       */
+      $HASHER = (new self($this->public, $this->secret, $this->algo))->hasher($this->public, $this->secret, $this->iv_num_byte);
+
+      /**
+       *  Generate Data
+       */
+      $data = openssl_decrypt(base64_decode($text), $this->algo, $HASHER['hashed_pkey'], 0, $HASHER['hashed_skey']);
+
+      return (new self($this->public, $this->secret, $this->algo))->ArrayDecode($data);
+
+  }
 }

@@ -38,6 +38,24 @@
          * @throws Exception
          * @test
          */
+        public function TestArrayDecrypt()
+        {
+            $this->assertEquals(['a','b','c'],$this->HideMyAssTest->ArrayDecrypt('Ky9iMk9VNzUxWW52VHZjaDRtTUZ4T0VlU21NRjU3TkZpSjNUNUFzQXpHdXB6enlMZDdsTCtRUk5ZUm1tbHBLL3djK0NYSWQyTFRlMVBYeHBsWEZoT2c9PQ'));
+        }
+
+        /**
+         * @throws Exception
+         * @test
+         */
+        public function TestArrayEncrypt()
+        {
+            $this->assertEquals('Ky9iMk9VNzUxWW52VHZjaDRtTUZ4T0VlU21NRjU3TkZpSjNUNUFzQXpHdXB6enlMZDdsTCtRUk5ZUm1tbHBLL3djK0NYSWQyTFRlMVBYeHBsWEZoT2c9PQ==',$this->HideMyAssTest->ArrayEncrypt(['a','b','c']));
+        }
+
+        /**
+         * @throws Exception
+         * @test
+         */
         public function TimeValidationTest()
         {
 
