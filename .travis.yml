@@ -19,7 +19,7 @@ script:
 #after_script:
 
 after_success:
-  - php test/coverage.php build/logs/clover.xml 80
+  - php test/coverage.php build/logs/clover.xml 68
 
 #after_failure:
 
