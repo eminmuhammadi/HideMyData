@@ -23,4 +23,4 @@ jobs:
       run: composer run-script test
       
     - name: Coverage Report
-      run: php test/coverage.php build/logs/clover.xml 80  
+      run: php test/coverage.php build/logs/clover.xml 68  
