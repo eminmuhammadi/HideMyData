@@ -1,9 +1,5 @@
 # HideMyData (v2.0.0) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyData.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyData)
 
-
-[![GitHub license](https://img.shields.io/github/license/eminmuhammadi/HideMyData.svg)](https://github.com/eminmuhammadi/HideMyData/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/tag/eminmuhammadi/HideMyData.svg)](https://GitHub.com/eminmuhammadi/HideMyData/tag/) [![Github all releases](https://img.shields.io/github/downloads/eminmuhammadi/HideMyData/total.svg)](https://GitHub.com/eminmuhammadi/HideMyData/releases/)
-
-
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP.
 ## Changelogs
 * v2.0.0
