@@ -1,4 +1,4 @@
-# HideMyData (v1.3.1) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyData.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyData)
+# HideMyData (v2.0.0) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyData.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyData)
 
 
 [![GitHub license](https://img.shields.io/github/license/eminmuhammadi/HideMyData.svg)](https://github.com/eminmuhammadi/HideMyData/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/tag/eminmuhammadi/HideMyData.svg)](https://GitHub.com/eminmuhammadi/HideMyData/tag/) [![Github all releases](https://img.shields.io/github/downloads/eminmuhammadi/HideMyData/total.svg)](https://GitHub.com/eminmuhammadi/HideMyData/releases/)
@@ -6,6 +6,11 @@
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP.
 ## Changelogs
+* v2.0.0
+  * We're not responsible for archived demo currently
+  * We changed repository name into HideMyData
+  * We removed support for [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass)
+
 * v1.3.1
   * Added Array mode.
   * Some bugs fixed.
@@ -35,14 +40,14 @@ These instructions will get you a copy of the project up and running on your loc
 You can install using Composer
 
 ```bash
-composer require eminmuhammadi/hidemyass:dev-master
+composer require eminmuhammadi/himemydata:dev-master
 ```
 or
 ```bash
 git clone https://github.com/eminmuhammadi/HideMyData.git
 ```
 
-## Coding
+## Codings
 
 ```php
 include_once 'vendor/autoload.php';
@@ -56,13 +61,13 @@ Library class called as `eminmuhammadi\HideMyData\HideMyData` and requires main 
 ```php
 <?php
 
-    require_once 'vendor/autoload.php';
+    require_once '../vendor/autoload.php';
 
-    $text = 'HideMyAss';
+    $text = 'HideMyData';
     $algo = 'aes256';
 
     try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+        $hider = (new eminmuhammadi\HideMyData\HideMyData('public-key', 'secret-key', $algo));
 
         $data = $hider->encrypt($text);
         print($data);
@@ -73,7 +78,7 @@ Library class called as `eminmuhammadi\HideMyData\HideMyData` and requires main 
 ```
 Result:
 ```text
-MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09
+KzdOWXBBWDNWSElWWm1VUkprenBFZz09
 ```
 
 ### Decryption :
@@ -81,13 +86,13 @@ MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09
 ```php
 <?php
 
-    require_once 'vendor/autoload.php';
+    require_once '../vendor/autoload.php';
 
-    $text = 'MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09';
+    $text = 'KzdOWXBBWDNWSElWWm1VUkprenBFZz09';
     $algo = 'aes256';
 
     try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+        $hider = (new eminmuhammadi\HideMyData\HideMyData('public-key', 'secret-key', $algo));
 
         $data = $hider->decrypt($text);
         print($data);
@@ -99,20 +104,20 @@ MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09
 
 Result:
 ```text
-HideMyAss
+HideMyData
 ```
 
 ### Time limiting for encryption|decryption
 ```php
 <?php
 
-    require_once 'vendor/autoload.php';
+    require_once '../vendor/autoload.php';
 
-    $text = 'HideMyAss';
+    $text = 'HideMyData';
     $algo = 'aes256';
 
     try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+        $hider = (new eminmuhammadi\HideMyData\HideMyData('public-key', 'secret-key', $algo));
 
         /**
          * @example $date - {5 second} , { 5 minute } , { 5 day } , { 5 month } , { 5 year }
@@ -127,19 +132,19 @@ HideMyAss
 
 Result : 
 ```text
-QTRmOGpVMml6MDNVVG5IWERDblgzazNOUmtnRjNKaEJ2Mzg4Y0Y5ZS9xaEczRnJvdmhUZ1hEYkVQM2pibUIvRkkrMDBCdU9SNW9OK1JrUmVicjZYQkgwWmFDUEI5WEtQT3MyVm1PZkUrR3BQQ2xFTHRHREYranYvdFk1bE1lamg
+QTRmOGpVMml6MDNVVG5IWERDblgzcFpzSE5oRHNYalVuT1NBV2w1UXB2clEyY2hRalVZbTVkL2ZJUjQ4MjNCT0RVUUZDb0NodGFCOTU2czVtUzNBMVU3eFhRRlM4cnhINmliWmRBY0I0eVo2dXdiaHY1bWxBWC85Y1piWUV4Qys=
 ```
 
 ```php
 <?php
 
-    require_once 'vendor/autoload.php';
+    require_once '../vendor/autoload.php';
 
-    $text = 'QTRmOGpVMml6MDNVVG5IWERDblgzazNOUmtnRjNKaEJ2Mzg4Y0Y5ZS9xaEczRnJvdmhUZ1hEYkVQM2pibUIvRkkrMDBCdU9SNW9OK1JrUmVicjZYQkgwWmFDUEI5WEtQT3MyVm1PZkUrR3BQQ2xFTHRHREYranYvdFk1bE1lamg';
+    $text = 'QTRmOGpVMml6MDNVVG5IWERDblgzcFpzSE5oRHNYalVuT1NBV2w1UXB2clEyY2hRalVZbTVkL2ZJUjQ4MjNCT0RVUUZDb0NodGFCOTU2czVtUzNBMVU3eFhRRlM4cnhINmliWmRBY0I0eVo2dXdiaHY1bWxBWC85Y1piWUV4Qys=';
     $algo = 'aes256';
 
     try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+        $hider = (new eminmuhammadi\HideMyData\HideMyData('public-key', 'secret-key', $algo));
 
         /**
          * @example $date - {5 second} , { 5 minute } , { 5 day } , { 5 month } , { 5 year }
@@ -157,12 +162,12 @@ QTRmOGpVMml6MDNVVG5IWERDblgzazNOUmtnRjNKaEJ2Mzg4Y0Y5ZS9xaEczRnJvdmhUZ1hEYkVQM2pi
 ```
 
 ```text
-Exception: eminmuhammadi\HideMyAss\decrypt:: - time limited for this keys please update time or generate new one. in H:\Xampp\htdocs\src\hidemyass.php:121 Stack trace: #0 H:\Xampp\htdocs\.test\date-decrypt.example.php(14): eminmuhammadi\HideMyAss\HideMyAss->decrypt('QTRmOGpVMml6MDN...', '1 minute') #1 {main}
+Exception: eminmuhammadi\HideMyData\decrypt:: - time limited for this keys please update time or generate new one. in C:\Users\MühammediEmin\Desktop\HideMyData\src\hidemydata.php:122 Stack trace: #0 C:\Users\MühammediEmin\Desktop\HideMyData\service\date-decrypt.example.php(14): eminmuhammadi\HideMyData\HideMyData->decrypt('QTRmOGpVMml6MDN...', '1 minute') #1 {main}
 ```
 **NOTE !!!** You need to update text because of old time limitation. When time is fresh then it will be like
 
 ```text
-HideMyAss
+HideMyData
 ```
 
 ## Ciphers List

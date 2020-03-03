@@ -1,7 +1,7 @@
 {
     "name": "eminmuhammadi/hidemydata",
     "description": "Managing a couple of algorithms to decrypt or encrypt text",
-    "version":"1.3.0",
+    "version":"2.0.0",
     "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,    

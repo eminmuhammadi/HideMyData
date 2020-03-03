@@ -2,11 +2,11 @@
 
     require_once '../vendor/autoload.php';
 
-    $text = 'QTRmOGpVMml6MDNVVG5IWERDblgzazNOUmtnRjNKaEJ2Mzg4Y0Y5ZS9xaEczRnJvdmhUZ1hEYkVQM2pibUIvRkkrMDBCdU9SNW9OK1JrUmVicjZYQkgwWmFDUEI5WEtQT3MyVm1PZkUrR3BQQ2xFTHRHREYranYvdFk1bE1lamg';
+    $text = 'QTRmOGpVMml6MDNVVG5IWERDblgzcFpzSE5oRHNYalVuT1NBV2w1UXB2clEyY2hRalVZbTVkL2ZJUjQ4MjNCT0RVUUZDb0NodGFCOTU2czVtUzNBMVU3eFhRRlM4cnhINmliWmRBY0I0eVo2dXdiaHY1bWxBWC85Y1piWUV4Qys=';
     $algo = 'aes256';
 
     try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+        $hider = (new eminmuhammadi\HideMyData\HideMyData('public-key', 'secret-key', $algo));
 
         /**
          * @example $date - {5 second} , { 5 minute } , { 5 day } , { 5 month } , { 5 year }

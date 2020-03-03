@@ -2,11 +2,11 @@
 
     require_once '../vendor/autoload.php';
 
-    $text = 'HideMyAss';
+    $text = 'HideMyData';
     $algo = 'aes256';
 
     try {
-        $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+        $hider = (new eminmuhammadi\HideMyData\HideMyData('public-key', 'secret-key', $algo));
 
         $data = $hider->encrypt($text);
         print($data);

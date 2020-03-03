@@ -11,7 +11,7 @@
          stopOnFailure="false">
 
 <testsuites>
-    <testsuite name="Test HideMyAss">
+    <testsuite name="Test HideMyData">
         <directory suffix=".php">./test</directory>
         <exclude>./test/coverage.php</exclude>
     </testsuite>

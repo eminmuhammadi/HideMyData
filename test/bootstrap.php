@@ -1,11 +1,11 @@
 <?php
 
-    use eminmuhammadi\HideMyAss\HideMyAss;
+    use eminmuhammadi\HideMyData\HideMyData;
     use PHPUnit\Framework\TestCase;
 
-    class HideMyAssTest extends TestCase
+    class HideMyDataTest extends TestCase
     {
-        protected $HideMyAssTest;
+        protected $HideMyDataTest;
 
         /**
          * @throws Exception
@@ -13,7 +13,7 @@
         public function setUp() : void
         {
 
-            $this->HideMyAssTest = new HideMyAss('public-key','secret-key','aes256');
+            $this->HideMyDataTest = new HideMyData('public-key','secret-key','aes256');
         }
 
         /**
@@ -22,7 +22,7 @@
          */
         public function TestEncrypt()
         {
-            $this->assertEquals('MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09',$this->HideMyAssTest->encrypt('HideMyAss'));
+            $this->assertEquals('KzdOWXBBWDNWSElWWm1VUkprenBFZz09',$this->HideMyDataTest->encrypt('HideMyData'));
         }
 
         /**
@@ -31,7 +31,7 @@
          */
         public function TestDecrypt()
         {
-            $this->assertEquals('HideMyAss',$this->HideMyAssTest->decrypt('MG9DS3BtaUZjN3ZtR3Rkekx3Sm1LQT09'));
+            $this->assertEquals('HideMyData',$this->HideMyDataTest->decrypt('KzdOWXBBWDNWSElWWm1VUkprenBFZz09'));
         }
 
         /**
@@ -40,7 +40,7 @@
          */
         public function TestArrayDecrypt()
         {
-            $this->assertEquals(['a','b','c'],$this->HideMyAssTest->ArrayDecrypt('Ky9iMk9VNzUxWW52VHZjaDRtTUZ4T0VlU21NRjU3TkZpSjNUNUFzQXpHdXB6enlMZDdsTCtRUk5ZUm1tbHBLL3djK0NYSWQyTFRlMVBYeHBsWEZoT2c9PQ'));
+            $this->assertEquals(['a','b','c'],$this->HideMyDataTest->ArrayDecrypt('Ky9iMk9VNzUxWW52VHZjaDRtTUZ4T0VlU21NRjU3TkZpSjNUNUFzQXpHdXB6enlMZDdsTCtRUk5ZUm1tbHBLL3djK0NYSWQyTFRlMVBYeHBsWEZoT2c9PQ=='));
         }
 
         /**
@@ -49,7 +49,7 @@
          */
         public function TestArrayEncrypt()
         {
-            $this->assertEquals('Ky9iMk9VNzUxWW52VHZjaDRtTUZ4T0VlU21NRjU3TkZpSjNUNUFzQXpHdXB6enlMZDdsTCtRUk5ZUm1tbHBLL3djK0NYSWQyTFRlMVBYeHBsWEZoT2c9PQ==',$this->HideMyAssTest->ArrayEncrypt(['a','b','c']));
+            $this->assertEquals('Ky9iMk9VNzUxWW52VHZjaDRtTUZ4T0VlU21NRjU3TkZpSjNUNUFzQXpHdXB6enlMZDdsTCtRUk5ZUm1tbHBLL3djK0NYSWQyTFRlMVBYeHBsWEZoT2c9PQ==',$this->HideMyDataTest->ArrayEncrypt(['a','b','c']));
         }
 
         /**
@@ -59,6 +59,6 @@
         public function TimeValidationTest()
         {
 
-            $this->assertEquals('HideMyAss',$this->HideMyAssTest->decrypt($this->HideMyAssTest->encrypt('HideMyAss','1 minute'),'1 minute'));
+            $this->assertEquals('HideMyData',$this->HideMyDataTest->decrypt($this->HideMyDataTest->encrypt('HideMyData','1 minute'),'1 minute'));
         }
     }

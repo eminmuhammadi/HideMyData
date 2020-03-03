@@ -3,7 +3,7 @@
 /**
  *  @author Emin Muhammadi
  *  @license  MIT License
- *  @link https://github.com/eminmuhammadi/HideMyAss
+ *  @link https://github.com/eminmuhammadi/HideMyData
 
  * Copyright (c) 2019 Emin Muhammadi
 
@@ -28,21 +28,21 @@
  */
 
 
-namespace eminmuhammadi\HideMyAss;
+namespace eminmuhammadi\HideMyData;
 
 /**
- * Class HideMyAss
+ * Class HideMyData
  * @property string secret
  * @property string public
  * @property string algo*@property false|int iv_num_byte
  * @property false|int iv_num_byte
- * @package eminmuhammadi\HideMyAss
+ * @package eminmuhammadi\HideMyData
  */
-class HideMyAss
+class HideMyData
 {
 
     /**
-     * HideMyAss constructor.
+     * HideMyData constructor.
      * @param $public - Public Key
      * @param $secret - Secret Key
      * @param string $algo - Type of Algorithm
@@ -60,14 +60,14 @@ class HideMyAss
 
     if (!in_array($this->algo, openssl_get_cipher_methods(true)))
     {
-        throw new \Exception("eminmuhammadi\HideMyAss\_constructor:: - unknown algorithm {$this->algo}");
+        throw new \Exception("eminmuhammadi\HideMyData\_constructor:: - unknown algorithm {$this->algo}");
     }
 
     $this->iv_num_byte = openssl_cipher_iv_length($this->algo);
   }
 
     /**
-     * HideMyAss Hasher
+     * HideMyData Hasher
      * @param $pkey - Public Key
      * @param $skey - Secret Key
      * @param $iv_num_byte - Length of cipher
@@ -111,7 +111,7 @@ class HideMyAss
 
          if (!isset($data->date) || !isset($data->text)) {
 
-             throw new \Exception("eminmuhammadi\HideMyAss\decrypt:: - data was damaged.");
+             throw new \Exception("eminmuhammadi\HideMyData\decrypt:: - data was damaged.");
          }
 
           /**
@@ -119,7 +119,7 @@ class HideMyAss
            */
          if((strtotime($date) - strtotime($data->date->end)) > (strtotime($data->date->end) - strtotime($data->date->start))){
 
-             throw new \Exception("eminmuhammadi\HideMyAss\decrypt:: - time limited for this keys please
+             throw new \Exception("eminmuhammadi\HideMyData\decrypt:: - time limited for this keys please
              update time or generate new one.");
          }
 
@@ -219,7 +219,7 @@ class HideMyAss
   {
       if(!is_array($text))
       {
-          throw new \Exception("eminmuhammadi\HideMyAss\ArrayEncrypt:: - Array not given");
+          throw new \Exception("eminmuhammadi\HideMyData\ArrayEncrypt:: - Array not given");
       }
 
       $text = (new self($this->public, $this->secret, $this->algo))->ArrayEncode($text);
@@ -288,7 +288,7 @@ class HideMyAss
 
           if (!isset($data->date) || !isset($data->text)) {
 
-              throw new \Exception("eminmuhammadi\HideMyAss\ArrayDecrypt:: - data was damaged.");
+              throw new \Exception("eminmuhammadi\HideMyData\ArrayDecrypt:: - data was damaged.");
           }
 
           /**
@@ -296,7 +296,7 @@ class HideMyAss
            */
           if((strtotime($date) - strtotime($data->date->end)) > (strtotime($data->date->end) - strtotime($data->date->start))){
 
-              throw new \Exception("eminmuhammadi\HideMyAss\ArrayDecrypt:: - time limited for this keys please
+              throw new \Exception("eminmuhammadi\HideMyData\ArrayDecrypt:: - time limited for this keys please
              update time or generate new one.");
           }
 

@@ -6,7 +6,7 @@ $text = 'Ky9iMk9VNzUxWW52VHZjaDRtTUZ4T0VlU21NRjU3TkZpSjNUNUFzQXpHdXB6enlMZDdsTCt
 $algo = 'aes256';
 
 try {
-    $hider = (new eminmuhammadi\HideMyAss\HideMyAss('public-key', 'secret-key', $algo));
+    $hider = (new eminmuhammadi\HideMyData\HideMyData('public-key', 'secret-key', $algo));
 
     $data = $hider->ArrayDecrypt($text);
     var_dump($data);
