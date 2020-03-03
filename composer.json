@@ -1,5 +1,5 @@
 {
-    "name": "eminmuhammadi/hidemyass",
+    "name": "eminmuhammadi/hidemydata",
     "description": "Managing a couple of algorithms to decrypt or encrypt text",
     "version":"1.3.0",
     "license": "MIT",
@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "eminmuhammadi\\hidemyass\\": "src/"
+            "eminmuhammadi\\hidemydata\\": "src/"
         },
         "classmap": ["src/"]
     },
