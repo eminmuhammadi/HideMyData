@@ -1,7 +1,7 @@
-# HideMyAss (v1.3.1) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyAss.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyAss)
+# HideMyData (v1.3.1) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyData.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyData)
 
 
-[![GitHub license](https://img.shields.io/github/license/eminmuhammadi/HideMyAss.svg)](https://github.com/eminmuhammadi/HideMyAss/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/tag/eminmuhammadi/HideMyAss.svg)](https://GitHub.com/eminmuhammadi/HideMyAss/tag/) [![Github all releases](https://img.shields.io/github/downloads/eminmuhammadi/HideMyAss/total.svg)](https://GitHub.com/eminmuhammadi/HideMyAss/releases/)
+[![GitHub license](https://img.shields.io/github/license/eminmuhammadi/HideMyData.svg)](https://github.com/eminmuhammadi/HideMyData/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/tag/eminmuhammadi/HideMyData.svg)](https://GitHub.com/eminmuhammadi/HideMyData/tag/) [![Github all releases](https://img.shields.io/github/downloads/eminmuhammadi/HideMyData/total.svg)](https://GitHub.com/eminmuhammadi/HideMyData/releases/)
 
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP.
@@ -39,7 +39,7 @@ composer require eminmuhammadi/hidemyass:dev-master
 ```
 or
 ```bash
-git clone https://github.com/eminmuhammadi/HideMyAss.git
+git clone https://github.com/eminmuhammadi/HideMyData.git
 ```
 
 ## Coding
@@ -47,7 +47,7 @@ git clone https://github.com/eminmuhammadi/HideMyAss.git
 ```php
 include_once 'vendor/autoload.php';
 ```
-Library class called as `eminmuhammadi\HideMyAss\HideMyAss` and requires main 3 options to use. `Secret Key` and `Public Key`  must be selected by individuals who need to use asymmetric encryption. There are a couple of `algorithms` divided into 2 part.
+Library class called as `eminmuhammadi\HideMyData\HideMyData` and requires main 3 options to use. `Secret Key` and `Public Key`  must be selected by individuals who need to use asymmetric encryption. There are a couple of `algorithms` divided into 2 part.
 
 ## Basic Use
 
