@@ -309,9 +309,8 @@ composer run-scripts test
 
 ## Applications
 
- - [Progressive Web Application](https://github.com/eminmuhammadi/create-hidemyass) ([demo](https://linkedit.ml))
- 
- - [Restful API](https://github.com/eminmuhammadi/create-hidemyass/api.php) ([demo](https://api.linkedit.ml))
+ - [Progressive Web Application](https://linkedit.ml). Please, pay attention to we are not maintaining this repository.
+ - [Restful API](https://api.linkedit.ml)
  
   `* Parametres *`
 
