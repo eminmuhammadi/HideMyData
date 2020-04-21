@@ -3,7 +3,7 @@
     "description": "Managing a couple of algorithms to decrypt or encrypt text",
     "version":"2.0.0",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,    
     "authors": [
         {
