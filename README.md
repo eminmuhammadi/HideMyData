@@ -1,32 +1,7 @@
-# HideMyData (v2.0.0) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyData.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyData)
+# HideMyData (v2.0.1) [![Build Status](https://travis-ci.org/eminmuhammadi/HideMyData.svg?branch=master)](https://travis-ci.org/eminmuhammadi/HideMyData)
 
 Managing a couple of algorithms to decrypt or encrypt text, powered by PHP.
-## Changelogs
-* v2.0.0
-  * We're not responsible for archived demo currently
-  * We changed repository name into HideMyData
-  * We removed support for [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass)
 
-* v1.3.1
-  * Added Array mode.
-  * Some bugs fixed.
-  
-
-* v1.3.0
-  * Added Test Cases [test/](test/).
-  * Some bugs fixed.
-  
-* v1.2.0
-
-  * Removed PWA. Created new repository at [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass).
-  * Added key limitings. Now you can use a time limit for validation of keys.
-  * Added new examples at [examples/](examples/)
-  * README changed.
-
-* v1.1.1
-  * Docblocks generated.  
-  * Created new directory for tests
-  
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -307,18 +282,35 @@ HideMyData
 composer run-scripts test
 ```
 
-## Applications
+## Changelogs
+* v2.0.1
+  * Composer package published
 
- - [Progressive Web Application](https://linkedit.ml). Please, pay attention to we are not maintaining this repository.
- - [Restful API](https://api.linkedit.ml)
- 
-  `* Parametres *`
+* v2.0.0
+  * We're not responsible for archived demo currently
+  * We changed repository name into HideMyData
+  * We removed support for [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass)
 
- *  `algo`  - Algorithms which are illustrated upside on the table
- *  `s_key`
- *  `p_key`
- *  `action` - (decrypt | encrypt)
- *  `text`
+* v1.3.1
+  * Added Array mode.
+  * Some bugs fixed.
+  
+
+* v1.3.0
+  * Added Test Cases [test/](test/).
+  * Some bugs fixed.
+  
+* v1.2.0
+
+  * Removed PWA. Created new repository at [eminmuhammadi/create-hidemyass](https://github.com/eminmuhammadi/create-hidemyass).
+  * Added key limitings. Now you can use a time limit for validation of keys.
+  * Added new examples at [examples/](examples/)
+  * README changed.
+
+* v1.1.1
+  * Docblocks generated.  
+  * Created new directory for tests
+  
  
 ## Authors
 
